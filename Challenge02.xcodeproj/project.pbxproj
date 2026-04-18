@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		0F894CB82F8F47FC005D0F01 /* Challenge02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge02.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F894CB82F8F47FC005D0F01 /* Challenge02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Challenge02.app; path = "/Users/han-kim/Documents/Challenge02/build/Debug-iphoneos/Challenge02.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,16 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				0F894CBA2F8F47FC005D0F01 /* Challenge02 */,
-				0F894CB92F8F47FC005D0F01 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		0F894CB92F8F47FC005D0F01 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0F894CB82F8F47FC005D0F01 /* Challenge02.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +86,7 @@
 			mainGroup = 0F894CAF2F8F47FC005D0F01;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 0F894CB92F8F47FC005D0F01 /* Products */;
+			productRefGroup = 0F894CAF2F8F47FC005D0F01;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

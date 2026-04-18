@@ -3,8 +3,6 @@
 //  Challenge02
 //
 //  Created by Han on 4/17/26.
-//
-
 import SwiftUI
 
 //필터버튼
