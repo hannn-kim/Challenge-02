@@ -59,11 +59,17 @@ struct HomeCardView: View {
                 .fontWeight(.regular)
                 .foregroundStyle(Color.smallTextGray)
             }
-            .padding(.bottom,4)
+            .padding(.bottom,6)
             
             //모임장, 참여자 프로필
             People(host: host, guests: guests, guestCount: guestCount, guestLimit: guestLimit)
+            
+            //구분선
+            Divider()
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 24)
+        .padding(.top)
         
     }
 }
