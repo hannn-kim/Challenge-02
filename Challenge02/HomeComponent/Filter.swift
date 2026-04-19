@@ -27,7 +27,7 @@ struct Filter: View {
 //필터바 UI
 struct FilterBar: View {
     @State private var selectedFilter: String = "전체"
-    var filterOptions = ["전체","식사/술","운동","공부","엔터","여행"]
+    var filterOptions = ["전체","식사/술","운동","공부","오락/엔터","여행"]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {

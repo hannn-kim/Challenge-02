@@ -9,25 +9,30 @@ import SwiftUI
 
 struct PostCreateView: View {
     var body: some View {
+        //상단 페이지 타이틀 컴포넌트
         FixedHeaderView()
         
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 //제목 컴포넌트
                 TextFieldComponent()
+                //카테고리 선택 컴포넌트
+                CategoryComponentBar()
                 //모임설명 컴포넌트
                 TextEditorComponent()
                 //장소입력 컴포넌트
                 LocationSelectView()
                 //모임일정 컴포넌트
-                SelectionButton(icon: "calendar.badge.clock", title: "모임 일정",actionDescription: "모임 날짜와 시간을 선택해주세요.", isPlaceholder: true, action: { print("버튼 클릭됨!")})
+                DateAndTimeComponent()
                 //모집인원 컴포넌트
-                SelectionButton(icon: "person", title: "모임 정원", actionDescription: "모임 정원을 선택해주세요.", isPlaceholder: true, action: { print("버튼 클릭됨!")})
+                GatheringSizeComponent()
             }
             .padding(.horizontal)
             
         }
         .padding(.top,12)
+        
+        LargeButton(title: "작성완료", action: { print("작성완료!") })
     }
 }
 

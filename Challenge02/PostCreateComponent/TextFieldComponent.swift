@@ -28,7 +28,7 @@ struct TextFieldComponent: View {
                             RoundedRectangle(cornerRadius: 8)
                                 .stroke(Color.lineGray, lineWidth: 1))
             }
-            .padding(.bottom,32)
+            .padding(.bottom,36)
         }
     }
 }

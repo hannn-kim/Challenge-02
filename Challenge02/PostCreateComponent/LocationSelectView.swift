@@ -29,7 +29,7 @@ struct LocationSelectView: View {
                                 .stroke(Color.lineGray, lineWidth: 1))
             }
         }
-        .padding(.bottom,32)
+        .padding(.bottom,36)
     }
 }
 

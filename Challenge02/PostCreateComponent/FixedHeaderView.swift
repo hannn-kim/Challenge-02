@@ -29,12 +29,12 @@ struct FixedHeaderView: View {
                 Spacer()
             }
             
-            Text("게시글 올리기")
+            Text("게시글 작성")
                 .font(.title3)
                 .bold()
         }
         .frame(height: 40)
-        .padding(.bottom,24)
+        .padding(.bottom,20)
     }
 }
 #Preview {
