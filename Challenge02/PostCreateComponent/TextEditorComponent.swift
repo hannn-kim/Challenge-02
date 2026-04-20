@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TextEditorComponent: View {
-    @State var description: String = ""
+    @Binding var description: String
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -43,5 +43,5 @@ struct TextEditorComponent: View {
 }
 
 #Preview {
-    TextEditorComponent()
+    TextEditorComponent(description: .constant("하이~"))
 }

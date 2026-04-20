@@ -9,13 +9,13 @@ import SwiftUI
 struct PostCreateView: View {
     //화면을 닫아서 이전 화면으로 돌아가게 만드는 코드
     @Environment(\.dismiss) var dismiss
-    //입력된 데이터를 임시저장할 변수
+//    //입력된 데이터를 임시저장할 변수
     @State private var title: String = ""
     @State private var selectedCategories: [String] = [] // 다중 선택용 배열
     @State private var content: String = ""
     @State private var location: String = ""
     @State private var selectedDate: Date = .now
-    @State private var maxParticipants: Int = 2
+    @State private var maxParticipants: Int? = nil
     
     var body: some View {
         VStack(spacing: 0) {
@@ -41,17 +41,17 @@ struct PostCreateView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
                     //제목 컴포넌트
-                    TextFieldComponent(title: .constant(""))
+                    TextFieldComponent(title: $title)
                     //카테고리 선택 컴포넌트
-                    CategoryComponentBar()
+                    CategoryComponentBar(selectedCategories: $selectedCategories)
                     //모임설명 컴포넌트
-                    TextEditorComponent()
+                    TextEditorComponent(description: $content)
                     //장소입력 컴포넌트
-                    LocationSelectView()
+                    LocationSelectView(location: $location)
                     //모임일정 컴포넌트
-                    DateAndTimeComponent()
+                    DateAndTimeComponent(selectedDate: $selectedDate)
                     //모집인원 컴포넌트
-                    GatheringSizeComponent()
+                    GatheringSizeComponent(inputCount: $maxParticipants)
                 }
                 .padding(.horizontal)
             }

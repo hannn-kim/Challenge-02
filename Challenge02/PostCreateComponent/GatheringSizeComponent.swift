@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct GatheringSizeComponent: View {
-    //숫자를 직접 담을 변수 생성(값이 비어있는 상태에서 시작해야하니 옵셔널을 줌)
-    @State private var inputCount: Int? = nil
+    @Binding var inputCount: Int?
+    @FocusState var focus
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -19,12 +19,24 @@ struct GatheringSizeComponent: View {
             HStack(spacing: 12) {
                 Image(systemName: "person")
                     .font(.title3)
-                    .foregroundStyle(inputCount == nil ? .textGray : .black)
                 
                 // 숫자 입력받는 TextField(단, 키보드 타입을 numberPad로 받음)
                 TextField("모임 정원을 입력해주세요.", value: $inputCount, format: .number)
                     .font(.callout)
                     .keyboardType(.numberPad)
+                    .focused($focus)
+                    .overlay {
+                        HStack {
+                            if let inputCount {
+                                Text("\(inputCount)")
+                                    .font(.callout)
+                                    .opacity(0)
+                                Text("명")
+                            }
+                            Spacer()
+                        }
+                        .opacity(focus ? 0 : 1)
+                    }
             }
             .padding()
             .frame(height: 56)
@@ -39,5 +51,6 @@ struct GatheringSizeComponent: View {
 
 
 #Preview {
-    GatheringSizeComponent()
+    @Previewable @State var inputCount: Int? = nil
+    GatheringSizeComponent(inputCount: $inputCount)
 }

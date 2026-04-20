@@ -32,3 +32,6 @@ class Post {
         self.maxParticipants = maxParticipants
     }
 }
+
+//더미데이터 영역
+//static으로 해서 샘플 데이터 배열을 만드는것임 (더미데이터 페이지 따로 생성하고 데이터를 여기에 주입!)

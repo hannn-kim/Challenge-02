@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocationSelectView: View {
-    @State var title: String = ""
+    @Binding var location: String
 
     var body: some View {
         VStack {
@@ -18,7 +18,7 @@ struct LocationSelectView: View {
                 
                 TextField(
                     "장소를 입력해주세요.",
-                    text: $title
+                    text: $location
                 )
                 .disableAutocorrection(true)
                 .font(.callout)
@@ -34,5 +34,5 @@ struct LocationSelectView: View {
 }
 
 #Preview {
-    LocationSelectView()
+    LocationSelectView(location: .constant(""))
 }

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DateAndTimeComponent: View {
-    @State private var isSheetPresented = false
-    @State private var selectedDate = Date()
-    @State private var hasSelectedDate = false
+    @State var isSheetPresented = false
+    @Binding var selectedDate: Date
+    @State var hasSelectedDate = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -63,7 +63,7 @@ struct DateAndTimeComponent: View {
 
 #Preview {
     VStack {
-        DateAndTimeComponent()
+        DateAndTimeComponent(selectedDate: .constant(Date()))
         Spacer()
     }
 }
