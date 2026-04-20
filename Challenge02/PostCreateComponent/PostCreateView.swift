@@ -5,17 +5,20 @@
 //  Created by Han on 4/19/26.
 //
 import SwiftUI
+import SwiftData
 
 struct PostCreateView: View {
     //화면을 닫아서 이전 화면으로 돌아가게 만드는 코드
     @Environment(\.dismiss) var dismiss
-//    //입력된 데이터를 임시저장할 변수
-    @State private var title: String = ""
-    @State private var selectedCategories: [String] = [] // 다중 선택용 배열
-    @State private var content: String = ""
-    @State private var location: String = ""
-    @State private var selectedDate: Date = .now
-    @State private var maxParticipants: Int? = nil
+    //    //입력된 데이터를 임시저장할 변수
+    @State var title: String = ""
+    @State var selectedCategories: [String] = [] // 다중 선택용 배열
+    @State var content: String = ""
+    @State var location: String = ""
+    @State var selectedDate: Date = .now
+    @State var maxParticipants: Int? = nil
+    //SwiftData modelContext 불러와서 데이터 넣고 빼기 가능하게 만드는 코드
+    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         VStack(spacing: 0) {
@@ -59,7 +62,16 @@ struct PostCreateView: View {
             
             // "작성완료" 버튼
             LargeButton(title: "작성완료", action: {
-                print("작성완료!")
+                let newPost = Post(
+                    title: title,
+                    selectedCategories: selectedCategories,
+                    content: content,
+                    location: location,
+                    selectedDate: selectedDate,
+                    maxParticipants: maxParticipants ?? 0
+                )
+                modelContext.insert(newPost)
+                
                 dismiss()
             })
             .padding(.bottom, 10)

@@ -10,25 +10,25 @@ import SwiftData
 @Model
 class Post {
     var title: String
-    var categories: [String] // 다중 선택 때문에 배열로 데이터 타입 지정
+    var selectedCategories: [String] // 다중 선택 때문에 배열로 데이터 타입 지정
     var content: String
     var location: String
-    var date: Date
+    var selectedDate: Date
     var maxParticipants: Int
     
     init(
         title: String = "",
-        categories: [String] = [],
+        selectedCategories: [String] = [],
         content: String = "",
         location: String = "",
-        date: Date = .now,
+        selectedDate: Date = .now,
         maxParticipants: Int = 2
     ) {
         self.title = title
-        self.categories = categories
+        self.selectedCategories = selectedCategories
         self.content = content
         self.location = location
-        self.date = date
+        self.selectedDate = selectedDate
         self.maxParticipants = maxParticipants
     }
 }
