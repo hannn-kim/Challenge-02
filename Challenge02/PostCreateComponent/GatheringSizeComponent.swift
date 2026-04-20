@@ -25,11 +25,6 @@ struct GatheringSizeComponent: View {
                 TextField("모임 정원을 입력해주세요.", value: $inputCount, format: .number)
                     .font(.callout)
                     .keyboardType(.numberPad)
-                
-                if inputCount != nil {
-                    Text("명")
-                        .font(.callout)
-                }
             }
             .padding()
             .frame(height: 56)

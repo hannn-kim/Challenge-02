@@ -18,7 +18,7 @@ struct LargeButton: View {
                 .fontWeight(.bold)
                 .foregroundColor(.black)
                 .frame(maxWidth: .infinity)
-                .frame(height: 56)
+                .frame(height: 64)
                 .background(Color("BrandColor"))
                 .cornerRadius(12)
         }

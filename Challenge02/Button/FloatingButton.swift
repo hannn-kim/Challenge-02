@@ -18,12 +18,12 @@ struct FloatingButton: View {
                 Image(systemName: "plus")
                     .font(.headline)
                 
-                Text("게시글 작성")
+                Text("글쓰기")
                     .font(.headline)
             }
             .foregroundColor(.black)
-            .padding(.vertical, 22)
-            .padding(.horizontal, 20)
+            .padding(.vertical, 12)
+            .padding(.horizontal, 16)
             .background(Color.brand)
             .cornerRadius(40)
         }
@@ -31,7 +31,7 @@ struct FloatingButton: View {
             PostCreateView()
         }
         .padding(.trailing, 24)
-        .padding(.bottom, 18)
+        .padding(.bottom, 12)
     }
 }
 

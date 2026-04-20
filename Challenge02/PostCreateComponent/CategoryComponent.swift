@@ -27,7 +27,8 @@ struct CategoryComponent: View {
 
 //필터바 UI
 struct CategoryComponentBar: View {
-    @State private var selectedFilters: Set<String> = Set<String>()
+    @Binding var selectedCategories: [String]
+    
     var filterOptions = ["식사/술", "운동", "공부", "오락/엔터", "여행"]
     
     var body: some View {
@@ -37,15 +38,19 @@ struct CategoryComponentBar: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 8) {
+                    //버튼 5개 찍어내는 코드
                     ForEach(filterOptions, id: \.self) { name in
                         CategoryComponent(
                             filterName: name,
-                            isSelected: selectedFilters.contains(name),
+                            isSelected: selectedCategories.contains(name),
+                            //선택된 카테고리 관리(누르면 선택되고, 다시 누르면 취소되는거)
                             action: {
-                                if selectedFilters.contains(name) {
-                                    selectedFilters.remove(name)
+                                //이미 추가된 이름인지 확인하고, 추가된 상태면 삭제시킨다. ($0 -> 현재 선택된 버튼을 의미함)
+                                if selectedCategories.contains(name) {
+                                    selectedCategories.removeAll{$0 == name}
                                 } else {
-                                    selectedFilters.insert(name)
+                                    //만약 추가되어있지 않으면, 추가시킨다. (append가 추가하는거임)
+                                    selectedCategories.append(name)
                                 }
                             }
                         )
@@ -58,5 +63,5 @@ struct CategoryComponentBar: View {
 }
 
 #Preview {
-    CategoryComponentBar()
+    CategoryComponentBar(selectedCategories: .constant(["운동"]))
 }

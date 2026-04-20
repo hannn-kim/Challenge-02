@@ -40,6 +40,7 @@ struct DateAndTimeComponent: View {
             }
         }
         .padding(.bottom,36)
+
         
         //Picker 시트 추가
         .sheet(isPresented: $isSheetPresented) {

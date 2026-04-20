@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TextFieldComponent: View {
-    @State var title: String = ""
+    @Binding var title: String
 
     var body: some View {
         VStack {
@@ -28,11 +28,12 @@ struct TextFieldComponent: View {
                             RoundedRectangle(cornerRadius: 8)
                                 .stroke(Color.lineGray, lineWidth: 1))
             }
+            .padding(.top)
             .padding(.bottom,36)
         }
     }
 }
 
 #Preview {
-    TextFieldComponent()
+    TextFieldComponent(title: .constant(""))
 }
