@@ -8,7 +8,6 @@ import SwiftUI
 
 struct GuestListView: View {
     var guest: Guests
-    var process: String
     
     var body: some View {
         HStack {
@@ -19,7 +18,7 @@ struct GuestListView: View {
                 .frame(width: 40, height: 40)
                 .clipShape(Circle())
                 .padding(.trailing,6)
-                .padding(.leading,12)
+                .padding(.leading,8)
                         
             //이름과 클래스타임
             VStack(alignment: .leading) {
@@ -37,10 +36,10 @@ struct GuestListView: View {
             Spacer()
             
             //게스트 신청처리 상태
-            Text(process)
+            Text(guest.process)
                 .padding(.leading,24)
-                .padding(.trailing,12)
-                .foregroundStyle(process == "참여가능" ? .green : .orange)
+                .padding(.trailing,8)
+                .foregroundStyle(guest.process == "신청완료" ? .green : .orange)
         }
         .padding(.horizontal,12)
         .padding(.vertical,20)

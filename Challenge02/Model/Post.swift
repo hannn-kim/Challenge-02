@@ -9,6 +9,7 @@ import SwiftData
 
 @Model
 class Post {
+    var createdAt: Date = Date()
     var host: Host
     var title: String
     var selectedCategories: [String] // 다중 선택 때문에 배열로 데이터 타입 지정
@@ -20,6 +21,7 @@ class Post {
 
     
     init(
+        createdAt: Date = .now,
         host: Host,
         title: String = "",
         selectedCategories: [String] = [],
@@ -29,6 +31,7 @@ class Post {
         maxParticipants: Int = 2
 
     ) {
+        self.createdAt = Date()
         self.host = host
         self.title = title
         self.selectedCategories = selectedCategories

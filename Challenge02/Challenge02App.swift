@@ -14,6 +14,6 @@ struct Challenge02App: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Post.self)
+        .modelContainer(for: [Post.self, Host.self, Guests.self])
     }
 }
