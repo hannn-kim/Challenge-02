@@ -10,7 +10,9 @@ import SwiftData
 struct PostCreateView: View {
     //화면을 닫아서 이전 화면으로 돌아가게 만드는 코드
     @Environment(\.dismiss) var dismiss
-    //    //입력된 데이터를 임시저장할 변수
+    //작성자 정보
+    @State var host: Host = Host(name: "한", hostProfileImage: "Profile")
+    //입력된 데이터를 임시저장할 변수
     @State var title: String = ""
     @State var selectedCategories: [String] = [] // 다중 선택용 배열
     @State var content: String = ""
@@ -63,6 +65,7 @@ struct PostCreateView: View {
             // "작성완료" 버튼
             LargeButton(title: "작성완료", action: {
                 let newPost = Post(
+                    host: host,
                     title: title,
                     selectedCategories: selectedCategories,
                     content: content,

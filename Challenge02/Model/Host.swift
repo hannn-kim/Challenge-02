@@ -6,9 +6,17 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Host: Identifiable {
-    var id = UUID()
+@Model
+class Host: Identifiable {
+    var id: UUID
     var name: String
     var hostProfileImage: String
+    
+    init(id: UUID = UUID(), name: String, hostProfileImage: String) {
+        self.id = id
+        self.name = name
+        self.hostProfileImage = hostProfileImage
+    }
 }

@@ -75,5 +75,5 @@ struct HomeCardView: View {
 }
 
 #Preview {
-    HomeCardView(status: true, title: "오늘 5km 러닝할 사람!", place: "대운동장", time: "04/03 13:00", host: Host(name: "Han", hostProfileImage: "user_profile"), guests: [Guests(guestName: "Hida", guestProfileImage: "user_profile"), Guests(guestName: "Jacky", guestProfileImage: "user_profile")], guestCount: 2, guestLimit: 4)
+    HomeCardView(status: true, title: "오늘 5km 러닝할 사람!", place: "대운동장", time: "04/03 13:00", host: Host(name: "Han", hostProfileImage: "user_profile"), guests: [Guests(guestName: "Hida", guestProfileImage: "user_profile", guestClassTime: "오후반", process: "참여가능")], guestCount: 2, guestLimit: 4)
 }

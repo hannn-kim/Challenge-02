@@ -52,5 +52,5 @@ struct People: View {
 }
 
 #Preview {
-    People(host: Host(name: "Han", hostProfileImage: "user_profile"), guests: [Guests(guestName: "Hida", guestProfileImage: "user_profile")], guestCount: 1, guestLimit: 4)
+    People(host: Host(name: "Han", hostProfileImage: "user_profile"), guests: [Guests(guestName: "Hida", guestProfileImage: "user_profile", guestClassTime: "오후반", process: "참여가능")], guestCount: 1, guestLimit: 4)
 }

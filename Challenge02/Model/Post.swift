@@ -9,21 +9,27 @@ import SwiftData
 
 @Model
 class Post {
+    var host: Host
     var title: String
     var selectedCategories: [String] // 다중 선택 때문에 배열로 데이터 타입 지정
     var content: String
     var location: String
     var selectedDate: Date
     var maxParticipants: Int
+    var participants: [Guests] = []
+
     
     init(
+        host: Host,
         title: String = "",
         selectedCategories: [String] = [],
         content: String = "",
         location: String = "",
         selectedDate: Date = .now,
         maxParticipants: Int = 2
+
     ) {
+        self.host = host
         self.title = title
         self.selectedCategories = selectedCategories
         self.content = content
