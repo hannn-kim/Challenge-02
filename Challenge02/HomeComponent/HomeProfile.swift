@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeProfile: View {
-    private let imageName: String = "user_profile"
-    private let name: String = "Han"
+    var imageName: String = "user_profile"
+    var name: String = "Han"
     
     var body: some View {
         HStack {
